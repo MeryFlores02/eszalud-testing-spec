@@ -19,13 +19,23 @@ public class CitaMedica {
             String motivo,
             EstadoCita estado
     ) {
-        this.paciente = validarTextoObligatorio(paciente, "El paciente es obligatorio");
-        this.doctor = validarTextoObligatorio(doctor, "El doctor es obligatorio");
-        this.especialidad = validarTextoObligatorio(especialidad, "La especialidad es obligatoria");
-        this.fechaHora = Objects.requireNonNull(fechaHora, "La fecha y hora son obligatorias");
+        this.paciente = validarTextoObligatorio(
+                paciente, "El paciente es obligatorio");
+
+        this.doctor = validarTextoObligatorio(
+                doctor, "El doctor es obligatorio");
+
+        this.especialidad = validarTextoObligatorio(
+                especialidad, "La especialidad es obligatoria");
+
+        setFechaHora(fechaHora);
+
         this.motivo = motivo;
-        // Decisión de ejemplo para CIT-006: si llega null, asigna PROGRAMADA por defecto
-        this.estado = (estado != null) ? estado : EstadoCita.PROGRAMADA;
+
+        // Si el estado es null, asignar PROGRAMADA por defecto
+        this.estado = (estado != null)
+                ? estado
+                : EstadoCita.PROGRAMADA;
     }
 
     private static String validarTextoObligatorio(String valor, String mensaje) {
@@ -64,6 +74,12 @@ public class CitaMedica {
     }
 
     public void setFechaHora(LocalDateTime fechaHora) {
+        if (fechaHora == null) {
+            throw new IllegalArgumentException(
+                    "La fecha y hora son obligatorias"
+            );
+        }
+
         this.fechaHora = fechaHora;
     }
 
