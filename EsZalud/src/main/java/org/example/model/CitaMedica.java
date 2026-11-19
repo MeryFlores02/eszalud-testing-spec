@@ -73,14 +73,18 @@ public class CitaMedica {
         return fechaHora;
     }
 
-    public void setFechaHora(LocalDateTime fechaHora) {
-        if (fechaHora == null) {
-            throw new IllegalArgumentException(
-                    "La fecha y hora son obligatorias"
-            );
+    private static <T> T validarObligatorio(T valor, String mensaje) {
+        if (valor == null) {
+            throw new IllegalArgumentException(mensaje);
         }
+        return valor;
+    }
 
-        this.fechaHora = fechaHora;
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = validarObligatorio(
+                fechaHora,
+                "La fecha y hora son obligatorias"
+        );
     }
 
     public String getMotivo() {
