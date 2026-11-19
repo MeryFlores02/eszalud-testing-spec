@@ -1,4 +1,5 @@
-import org.example.model.Especialidad;
+package org.example.model;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

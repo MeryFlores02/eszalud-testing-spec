@@ -1,5 +1,5 @@
-import org.example.model.CitaMedica;
-import org.example.model.EstadoCita;
+package org.example.model;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
