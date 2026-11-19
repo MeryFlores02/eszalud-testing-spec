@@ -64,7 +64,7 @@ public class CitaMedica {
     }
 
     public void setFechaHora(LocalDateTime fechaHora) {
-        this.fechaHora = Objects.requireNonNull(fechaHora, "La fecha y hora son obligatorias");
+        this.fechaHora = fechaHora;
     }
 
     public String getMotivo() {
