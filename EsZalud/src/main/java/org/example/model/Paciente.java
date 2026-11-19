@@ -18,10 +18,13 @@ public class Paciente {
     }
 
     private static String validarTextoObligatorio(String valor, String mensaje) {
+        Objects.requireNonNull(mensaje, "El mensaje de validación no puede ser null");
+
         if (valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(mensaje);
         }
-        return valor.trim();
+
+        return valor.strip();
     }
 
     public String getDocumento() {
