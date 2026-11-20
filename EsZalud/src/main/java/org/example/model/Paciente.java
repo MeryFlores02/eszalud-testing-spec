@@ -1,25 +1,31 @@
+
 package org.example.model;
 
 import java.util.Objects;
 
 public class Paciente {
+
     private String documento;
     private String nombres;
     private String apellidos;
     private String telefono;
     private String correo;
 
-    public Paciente(String documento, String nombres, String apellidos, String telefono, String correo) {
-        this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
-        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
-        this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
-        this.telefono = telefono;
-        this.correo = correo;
+    public Paciente(
+            String documento,
+            String nombres,
+            String apellidos,
+            String telefono,
+            String correo) {
+
+        setDocumento(documento);
+        setNombres(nombres);
+        setApellidos(apellidos);
+        setTelefono(telefono);
+        setCorreo(correo);
     }
 
     private static String validarTextoObligatorio(String valor, String mensaje) {
-        Objects.requireNonNull(mensaje, "El mensaje de validación no puede ser null");
-
         if (valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(mensaje);
         }
@@ -32,7 +38,8 @@ public class Paciente {
     }
 
     public void setDocumento(String documento) {
-        this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
+        this.documento = validarTextoObligatorio(
+                documento, "El documento es obligatorio");
     }
 
     public String getNombres() {
@@ -40,7 +47,8 @@ public class Paciente {
     }
 
     public void setNombres(String nombres) {
-        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
+        this.nombres = validarTextoObligatorio(
+                nombres, "Los nombres son obligatorios");
     }
 
     public String getApellidos() {
@@ -48,7 +56,8 @@ public class Paciente {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
+        this.apellidos = validarTextoObligatorio(
+                apellidos, "Los apellidos son obligatorios");
     }
 
     public String getTelefono() {
@@ -70,8 +79,9 @@ public class Paciente {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Paciente that)) return false;
-        return Objects.equals(documento, that.documento);
+        if (!(o instanceof Paciente paciente)) return false;
+
+        return Objects.equals(documento, paciente.documento);
     }
 
     @Override
@@ -85,8 +95,6 @@ public class Paciente {
                 "documento='" + documento + '\'' +
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", correo='" + correo + '\'' +
                 '}';
     }
 }
