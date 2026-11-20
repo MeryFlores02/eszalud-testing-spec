@@ -1,26 +1,35 @@
+
 package org.example.model;
 
 import java.util.Objects;
 
 public class Doctor {
+
     private String documento;
     private String nombres;
     private String apellidos;
     private String colegiatura;
     private String especialidad;
 
-    public Doctor(String documento, String nombres, String apellidos, String colegiatura, String especialidad) {
-        this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
-        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
-        this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
-        this.colegiatura = validarTextoObligatorio(colegiatura, "La colegiatura es obligatoria");
-        this.especialidad = validarTextoObligatorio(especialidad, "La especialidad es obligatoria");
+    public Doctor(
+            String documento,
+            String nombres,
+            String apellidos,
+            String colegiatura,
+            String especialidad) {
+
+        setDocumento(documento);
+        setNombres(nombres);
+        setApellidos(apellidos);
+        setColegiatura(colegiatura);
+        setEspecialidad(especialidad);
     }
 
     private static String validarTextoObligatorio(String valor, String mensaje) {
         if (valor == null || valor.isBlank()) {
             throw new IllegalArgumentException(mensaje);
         }
+
         return valor.trim();
     }
 
@@ -29,7 +38,8 @@ public class Doctor {
     }
 
     public void setDocumento(String documento) {
-        this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
+        this.documento = validarTextoObligatorio(
+                documento, "El documento es obligatorio");
     }
 
     public String getNombres() {
@@ -37,7 +47,8 @@ public class Doctor {
     }
 
     public void setNombres(String nombres) {
-        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
+        this.nombres = validarTextoObligatorio(
+                nombres, "Los nombres son obligatorios");
     }
 
     public String getApellidos() {
@@ -45,7 +56,8 @@ public class Doctor {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
+        this.apellidos = validarTextoObligatorio(
+                apellidos, "Los apellidos son obligatorios");
     }
 
     public String getColegiatura() {
@@ -53,7 +65,8 @@ public class Doctor {
     }
 
     public void setColegiatura(String colegiatura) {
-        this.colegiatura = validarTextoObligatorio(colegiatura, "La colegiatura es obligatoria");
+        this.colegiatura = validarTextoObligatorio(
+                colegiatura, "La colegiatura es obligatoria");
     }
 
     public String getEspecialidad() {
@@ -61,14 +74,17 @@ public class Doctor {
     }
 
     public void setEspecialidad(String especialidad) {
-        this.especialidad = validarTextoObligatorio(especialidad, "La especialidad es obligatoria");
+        this.especialidad = validarTextoObligatorio(
+                especialidad, "La especialidad es obligatoria");
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Doctor that)) return false;
-        return Objects.equals(documento, that.documento) && Objects.equals(colegiatura, that.colegiatura);
+        if (!(o instanceof Doctor doctor)) return false;
+
+        return Objects.equals(documento, doctor.documento)
+                && Objects.equals(colegiatura, doctor.colegiatura);
     }
 
     @Override
