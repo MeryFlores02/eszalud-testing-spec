@@ -23,8 +23,8 @@ public class CitaMedica {
 
         this.doctor = validarTextoObligatorio(doctor, "El doctor es obligatorio");
 
-        this.especialidad =
-                especialidad;
+        this.especialidad = validarTextoObligatorio(
+                especialidad, "La especialidad es obligatoria");
 
         setFechaHora(fechaHora);
 
