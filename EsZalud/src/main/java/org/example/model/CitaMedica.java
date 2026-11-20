@@ -21,8 +21,7 @@ public class CitaMedica {
     ) {
         this.paciente = validarTextoObligatorio(paciente, "El paciente es obligatorio");
 
-        this.doctor = validarTextoObligatorio(
-                doctor, "El doctor es obligatorio");
+        this.doctor = validarTextoObligatorio(doctor, "El doctor es obligatorio");
 
         this.especialidad = validarTextoObligatorio(
                 especialidad, "La especialidad es obligatoria");
