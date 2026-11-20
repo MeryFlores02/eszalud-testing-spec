@@ -19,8 +19,7 @@ public class CitaMedica {
             String motivo,
             EstadoCita estado
     ) {
-        this.paciente = validarTextoObligatorio(
-                paciente, "El paciente es obligatorio");
+        this.paciente = validarTextoObligatorio(paciente, "El paciente es obligatorio");
 
         this.doctor = validarTextoObligatorio(
                 doctor, "El doctor es obligatorio");
