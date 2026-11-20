@@ -27,7 +27,7 @@ public class Especialidad {
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return "";
     }
 
     public void setDescripcion(String descripcion) {
