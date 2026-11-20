@@ -40,7 +40,7 @@ public class Paciente {
     }
 
     public void setNombres(String nombres) {
-        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
