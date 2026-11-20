@@ -32,7 +32,7 @@ public class Paciente {
     }
 
     public void setDocumento(String documento) {
-        this.documento = documento;
+        this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
     }
 
     public String getNombres() {
