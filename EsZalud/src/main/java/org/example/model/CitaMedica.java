@@ -95,7 +95,7 @@ public class CitaMedica {
     }
 
     public void setEstado(EstadoCita estado) {
-        this.estado = Objects.requireNonNull(estado, "El estado no puede ser nulo");
+        this.estado = estado;
     }
 
     @Override
