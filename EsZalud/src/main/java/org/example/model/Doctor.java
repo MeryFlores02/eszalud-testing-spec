@@ -11,7 +11,7 @@ public class Doctor {
 
     public Doctor(String documento, String nombres, String apellidos, String colegiatura, String especialidad) {
         this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
-        this.nombres = nombres;
+        this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
         this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
         this.colegiatura = validarTextoObligatorio(colegiatura, "La colegiatura es obligatoria");
         this.especialidad = validarTextoObligatorio(especialidad, "La especialidad es obligatoria");
