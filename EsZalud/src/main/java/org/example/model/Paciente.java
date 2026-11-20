@@ -12,7 +12,7 @@ public class Paciente {
     public Paciente(String documento, String nombres, String apellidos, String telefono, String correo) {
         this.documento = validarTextoObligatorio(documento, "El documento es obligatorio");
         this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
-        this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
+        this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
     }
