@@ -14,7 +14,7 @@ public class Doctor {
         this.nombres = validarTextoObligatorio(nombres, "Los nombres son obligatorios");
         this.apellidos = validarTextoObligatorio(apellidos, "Los apellidos son obligatorios");
         this.colegiatura = validarTextoObligatorio(colegiatura, "La colegiatura es obligatoria");
-        this.especialidad = especialidad;
+        this.especialidad = validarTextoObligatorio(especialidad, "La especialidad es obligatoria");
     }
 
     private static String validarTextoObligatorio(String valor, String mensaje) {
